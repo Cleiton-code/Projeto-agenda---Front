@@ -1,16 +1,44 @@
-<form>
+<div class="container">
+  <h1>Cadastro de Compromissos</h1>
+<form [formGroup] = "formGroupCompromissos">
+
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    <label for="title" class="form-label">Título</label>
+    <input formControlName="title" type="text" class="form-control" id="title" placeholder="Coloque o título do compromisso">
+  </div>
+
+  <div class="mb-3">
+    <label for="descricao" class="form-label">Descrição</label>
+    <input formControlName="descricao" type="text" class="form-control" id="descricao" placeholder="Coloque uma descrição para o compromisso">
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
+    <label for="datacompromisso" class="form-label">Data</label>
+    <input formControlName="datacompromisso" type="data" class="form-control" id="datacompromisso">
   </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+  <div class="mb-3">
+    <label for="inicio" class="form-label">Início</label>
+    <input formControlName="inicio" type="time" class="form-control" id="inicio" placeholder="Coloque o horario de início">
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <div class="mb-3">
+    <label for="fim" class="form-label">Fim</label>
+    <input formControlName="fim" type="time" class="form-control" id="fim" placeholder="Coloque o horario do término">
+  </div>
+  <div class="mb-3">
+    <label for="local" class="form-label">Local</label>
+    <input formControlName="local" type="text" class="form-control" id="local" placeholder="Local do compromisso">
+  </div>
+  <div class="mb-3">
+    <label for="situacao" class="form-label">Situação</label>
+    <input formControlName="situacao" list="selecaostatus" type="text" class="form-control" id="situacao" placeholder="Qual a situação?">
+    <datalist id="selecaostatus">
+      <option value="Concluído">
+      <option value="Pendente">
+      <option value="Remarcar">
+    </datalist>
+  </div>
+
+  <button (click)="update()" class="btn" *ngIf="isEditing">Editar</button>
+
+  <button (click)="save()" *ngIf="!isEditing" class="btn">Salvar</button>
 </form>
+</div>

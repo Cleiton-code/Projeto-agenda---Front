@@ -30,4 +30,8 @@ export class TableComponent {
       next: () => this.loadCompromisso()
     })
   };
+
+  create(){
+    this.router.navigate(['compromisso'])
+  };
 }
