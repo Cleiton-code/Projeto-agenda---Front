@@ -12,15 +12,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>mdo</td>
-      <td>mdo</td>
-      <td>mdo</td>
-      <td>mdo</td>
-      <td>mdo</td>
+    <tr *ngFor="let compromisso of compromissos">
+      <th>{{compromisso.id}}</th>
+      <th><a [routerLink]="['/compromisso', compromisso.id]">{{compromisso.title}}</a></th>
+      <td>{{compromisso.descricao}}</td>
+      <td>{{compromisso.datacompromisso}}</td>
+      <td>{{compromisso.inicio}}</td>
+      <td>{{compromisso.fim}}</td>
+      <td>{{compromisso.local}}</td>
+      <td>{{compromisso.situacao}}</td>
     </tr>
   </tbody>
 </table>
