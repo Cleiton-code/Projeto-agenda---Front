@@ -24,4 +24,10 @@ export class TableComponent {
       next: data => this.compromissos = data
     })
   };
+
+  delete(compromisso: Compromisso){
+    this.service.delete(compromisso).subscribe({
+      next: () => this.loadCompromisso()
+    })
+  };
 }
