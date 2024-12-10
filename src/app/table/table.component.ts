@@ -31,7 +31,7 @@ export class TableComponent {
     })
   };
 
-  create(){
-    this.router.navigate(['compromisso'])
-  };
+create(){
+  this.router.navigate(['compromissos'])
+};
 }

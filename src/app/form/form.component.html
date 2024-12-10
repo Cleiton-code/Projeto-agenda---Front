@@ -37,8 +37,8 @@
     </datalist>
   </div>
 
-  <button (click)="update()" class="btn" *ngIf="isEditing">Editar</button>
+  <button *ngIf="isEditing" class="btn btn-primary" (click)="update()" >Editar</button>
 
-  <button (click)="save()" *ngIf="!isEditing" class="btn">Salvar</button>
+  <button *ngIf="!isEditing" class="btn btn-primary" (click)="save()">Salvar</button>
 </form>
 </div>

@@ -1,3 +1,5 @@
+<div class="container">
+  <button class="btn btn-primary" (click)="create()">Criar</button>
 <table class="table">
   <thead>
     <tr>
@@ -22,7 +24,8 @@
       <td>{{compromisso.local}}</td>
       <td>{{compromisso.situacao}}</td>
 
-      <button class="button" (click)="delete(compromisso)"></button>
+      <td><button class="btn btn-danger" (click)="delete(compromisso)">Deletar</button></td>
     </tr>
   </tbody>
 </table>
+</div>

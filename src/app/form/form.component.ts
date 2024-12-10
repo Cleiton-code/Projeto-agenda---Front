@@ -45,14 +45,20 @@ constructor(private router: Router,
   };
 
   update(){
+    const titulo = this.formGroupCompromissos.get('title')?.value;
+    if ( !titulo || titulo.trim() === ""){
+      alert("Títilo não pode ser vazio!!! verifique o campo")
+    }
+    else{
+
     this.service.update(this.formGroupCompromissos.value).subscribe({
       next: () => this.router.navigate(['compromisso'])
     })
-  }
+  }}
 
   save(){
     const titulo = this.formGroupCompromissos.get('title')?.value;
-    if (!titulo || titulo.trim() === ""){
+    if ( !titulo || titulo.trim() === ""){
       alert("Títilo não pode ser vazio!!! verifique o campo")
     }
     else{

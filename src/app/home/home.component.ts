@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-compromisso: Compromisso [] = [];
+compromissos: Compromisso [] = [];
 
   constructor(private service: AgendaService,
               private router: Router
@@ -21,8 +21,8 @@ compromisso: Compromisso [] = [];
 
   loadCompromisso(){
     this.service.getCompromisso().subscribe({
-      next: data => this.compromisso = data
+      next: data => this.compromissos = data
     })
-  }
+  };
 
 }
