@@ -8,7 +8,7 @@ import { Compromisso } from './compromisso';
 })
 export class AgendaService {
 
-  url='http://localhost:8080/compromisso'
+  url='https://api.agendafatecvalentim.duckdns.org/compromisso'
 
   constructor(private http:HttpClient) { }
 
